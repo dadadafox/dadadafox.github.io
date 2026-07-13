@@ -1,52 +1,44 @@
-# Super Awareness — 使い方
+# Super Awareness — 使い方（中央タイトル＋横メニュー版）
 
-白黒・サイドバー付きの静的サイト一式です。GitHub Pages にそのまま置くだけで動きます。
-（Jekyll などの変換は使いません。`.nojekyll` を同梱しているので、ファイルがそのまま表示されます）
+白黒・situational-awareness 風の静的サイト一式です。GitHub Pages にそのまま置くだけで動きます。
+（`.nojekyll` 同梱。Jekyll 変換は使いません）
 
 ## 入っているもの
-- `index.html` … Intro ページ（トップ）
-- `personal.html` / `seeds.html` / `person.html` … 各ページ
-- `style.css` … 全ページ共通の見た目（色はここで変えられます）
-- `site.js` … サイドバー（タイトル・メニュー・サグラダ）を全ページに表示。seeds の絞り込みもここ
-- `_template.html` … 新しいページを作るときの雛形
-- `.nojekyll` … 純粋な静的サイトとして公開するための印（消さないでください）
+- `index.html` … Intro（トップ）
+- `personal.html` … Personal
+- `seeds.html` … Seeds（ラベルで絞り込めるメモ一覧）
+- `person.html` … Person（人物の一覧）
+- `gaudi.html` … 人物記事の例（アントニ・ガウディ）
+- `style.css` … 全ページ共通の見た目（色はここ）
+- `site.js` … 中央タイトルと横メニューを全ページに表示。seeds の絞り込みもここ
+- `_template.html` … 新しい記事を作るときの雛形
+- `.nojekyll` … 静的サイトとして公開する印（消さない）
 
 ---
 
-## 1. 公開する（既存のリポジトリに入れる）
-すでにある `dadadafox.github.io` リポジトリに入れます。
+## 公開（既存リポジトリに入れる）
+この一式のファイルを**リポジトリの一番上（ルート）**にアップロード → Commit。
+同名ファイルは上書きされ、`gaudi.html` が新しく追加されます。
 
-1. 前のテスト用ファイル（`index.md`、`_config.yml`、`01_business_ideas` などの古いフォルダ）は削除してください
-2. この一式（`index.html` など。フォルダごと）をリポジトリにアップロード → Commit
-3. 数分後 `https://dadadafox.github.io/` で表示されます
-   - 反映されないときは Settings → Pages で Branch が `main` になっているか確認
-
----
-
-## 2. 新しいページを追加する（← これが「ページを作っていく」手順）
-1. `_template.html` をコピーして、好きな名前で保存（例：`research.html`）
-2. 中の `<title>` と `<h1>` をそのページ名に書き換え、本文を書く
-3. `site.js` の `NAV` に1行足す。例：
-   ```js
-   { label: "Research", href: "/research.html" },
+## Person に人物を追加する（← これがメインの追加作業）
+1. `_template.html` をコピーして、その人の名前でファイルを作る（例：`dali.html`）
+2. 中の `<title>` `<h1>` `<div class="byline">` と本文を書き換える
+   （`data-section="person"` はそのまま＝Person メニューが選ばれた状態になる）
+3. `person.html` の一覧に、その人への行を1つ足す：
+   ```html
+   <li class="entry">
+     <h2><a href="/dali.html">Salvador Dalí</a></h2>
+     <p class="desc">画家 · 1904–1989</p>
+   </li>
    ```
-   → これだけで、全ページのサイドバーに「Research」が出ます（毎回サイドバーを書き直す必要はありません）
+これで Person 一覧に並び、クリックすると記事が開きます。何人でも同じ手順で増やせます。
 
-## 3. seeds にメモ（ラベル付き）を追加する
-`seeds.html` の中の `<li class="entry" ...>` ブロックを1つコピーして、
-- `data-cat="business"` … ラベル名
-- 日付・タイトル・説明
+## Seeds にメモを追加する
+`seeds.html` の `<li class="entry" data-cat="...">` を1つコピーして書き換え。
+新しいラベルは、上の `<span class="chip" data-f="...">` を1つ足す。
 
-を書き換えます。**新しいラベルを増やしたいとき**は、`<div class="filters">` の中に
-`<span class="chip" data-f="新ラベル">新ラベル</span>` を1つ足してください。
-
----
-
-## 4. よくある変更
+## その他
+- **メニューを増やす** … `site.js` の `NAV` に1行追加
 - **タイトルを変える** … `site.js` の `TITLE`
-- **色を変える** … `style.css` の先頭 `:root { ... }`
-- **サグラダを別案（2 や 3）に差し替える** … `site.js` の `SAGRADA` の中身を入れ替え
-  （案2・案3のSVGが必要なときは声をかけてください、お渡しします）
-
-## メモ
-- メニューの `personal` と `person` は名前が似ています。片方を別のもの（research / about / people など）にしたい場合は、`site.js` の `NAV` の該当行と、そのページ名を変えれば区別できます。
+- **色を変える** … `style.css` の `:root`
+- **サグラダを別案に** … `site.js` の `SAGRADA` を差し替え（別案が必要なら声をかけてください）

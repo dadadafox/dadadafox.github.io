@@ -6,14 +6,13 @@
 <title>Seeds — Super Awareness</title>
 <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <div id="sidebar"></div>
-  <main class="main">
-    <div class="container">
-      <div class="pagehead"><h1>Seeds</h1></div>
+<body data-section="seeds">
+  <div class="wrap">
+    <header id="top"></header>
+    <main class="content">
+      <h1>Seeds</h1>
 
-      <!-- カテゴリ（ラベル）。新しいラベルを足したいときは、
-           下の data-f を新しい名前にした <span class="chip"> を1つ追加します -->
+      <!-- カテゴリ（ラベル）。新しいラベルは data-f を変えた chip を1つ足す -->
       <div class="filters">
         <span class="chip on" data-f="all">all</span>
         <span class="chip" data-f="business">business</span>
@@ -22,8 +21,7 @@
         <span class="chip" data-f="random">random</span>
       </div>
 
-      <!-- メモ一覧。新しいメモを足すときは、この <li> ブロックを1つコピーして
-           data-cat を該当ラベルに、日付・タイトル・説明を書き換えます -->
+      <!-- メモ一覧。1件足すときは <li class="entry" ...> ブロックをコピー -->
       <ul class="feed">
         <li class="entry" data-cat="business">
           <div class="meta">2026.07.11<span class="tag">business</span></div>
@@ -42,9 +40,8 @@
         </li>
       </ul>
       <div class="empty" id="empty" style="display:none;">このラベルのメモはまだありません。</div>
-
-    </div>
-  </main>
+    </main>
+  </div>
   <script src="/site.js"></script>
 </body>
 </html>
