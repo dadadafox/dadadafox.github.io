@@ -25,12 +25,16 @@
     <main class="content">
       <h1>Person</h1>
 
-      <!-- 人物一覧。1人足すときは、この <li class="entry"> ブロックをコピーして
-           名前・肩書き・リンク先ファイルを書き換え、記事ファイル（例: gaudi.html）を作る -->
+      <!-- 人物一覧。1人足すときは、この <li class="entry person"> ブロックをコピーして
+           data-initial（頭文字アバター）・名前・肩書き・リンク先を書き換える。
+           本物の肖像を使うときは data-portrait="/portraits/○○.jpg" を足して画像を置く。 -->
       <ul class="feed">
-        <li class="entry">
-          <h2><a href="/gaudi.html">Antoni Gaudí</a></h2>
-          <p class="desc">建築家 · 1852–1926 · サグラダ・ファミリアの設計者</p>
+        <li class="entry person" data-initial="G" data-portrait="/portraits/gaudi.jpg">
+          <div class="avatar"></div>
+          <div class="txt">
+            <h2><a href="/gaudi.html">Antoni Gaudí</a></h2>
+            <p class="desc">建築家 · 1852–1926 · サグラダ・ファミリアの設計者</p>
+          </div>
         </li>
       </ul>
     </main>

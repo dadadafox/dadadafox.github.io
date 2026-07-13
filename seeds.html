@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seeds — Super Awareness</title>
+<title>Business Ideas — Super Awareness</title>
 <meta name="description" content="A north star for the future we're building.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png">
@@ -20,41 +20,55 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 <body data-section="seeds">
-  <div class="wrap">
-    <header id="top"></header>
-    <main class="content">
-      <h1>Seeds</h1>
+  <div class="wrap" style="padding-bottom:0;"><header id="top"></header></div>
 
-      <!-- カテゴリ（ラベル）。新しいラベルは data-f を変えた chip を1つ足す -->
-      <div class="filters">
-        <span class="chip on" data-f="all">all</span>
-        <span class="chip" data-f="business">business</span>
-        <span class="chip" data-f="product">product</span>
-        <span class="chip" data-f="life">life</span>
-        <span class="chip" data-f="random">random</span>
-      </div>
+  <main class="wide">
+    <div class="ideas-head">
+      <div class="crumb">/ Home / Ideas</div>
+      <h1>Business Ideas</h1>
+      <p class="lead">次事業構想 — Deep Tech × 日米同盟 × ハードインフラ</p>
+      <div class="hr"></div>
+    </div>
 
-      <!-- メモ一覧。1件足すときは <li class="entry" ...> ブロックをコピー -->
-      <ul class="feed">
-        <li class="entry" data-cat="business">
-          <div class="meta">2026.07.11<span class="tag">business</span></div>
-          <h2><a href="#">（メモのタイトル）</a></h2>
-          <p class="desc">（一行の説明）</p>
-        </li>
-        <li class="entry" data-cat="product">
-          <div class="meta">2026.07.08<span class="tag">product</span></div>
-          <h2><a href="#">（メモのタイトル）</a></h2>
-          <p class="desc">（一行の説明）</p>
-        </li>
-        <li class="entry" data-cat="life">
-          <div class="meta">2026.07.04<span class="tag">life</span></div>
-          <h2><a href="#">（メモのタイトル）</a></h2>
-          <p class="desc">（一行の説明）</p>
-        </li>
-      </ul>
-      <div class="empty" id="empty" style="display:none;">このラベルのメモはまだありません。</div>
-    </main>
-  </div>
+    <!-- カード：1枚足すときは、この <a class="card"> ブロックをコピー。
+         ステータスは badge active / draft / soon を使い分け。
+         リンク先(href)は、そのアイデアの詳細ページ（例: idea-global-foundry.html）-->
+    <div class="ideas-grid">
+
+      <a class="card" href="/idea-global-foundry.html">
+        <div class="eyebrow">IDEA 01 · 260608</div>
+        <h3>Global Foundry</h3>
+        <div class="sub">新フロンティア技術の商社 → Pure-play Foundry ODM</div>
+        <p class="body">日本の最強素材を Black Box で組込み、世界一クオリティ × CFIUS完全クリアで米ディープテック・防衛・宇宙のサプライチェーンを握る。商社スタート → LA/Texas Foundry へ。$1T Company を目指す。</p>
+        <div class="foot"><span class="badge active">ACTIVE</span><span class="label">Seed: $300M pre / $30M raise</span></div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="eyebrow">IDEA 02 · 260621</div>
+        <h3>Japan Space Conglomerate</h3>
+        <div class="sub">宇宙ビジネス / Space Market Map</div>
+        <p class="body">宇宙バリューチェーン全体を俯瞰し、日本企業が握れるレイヤーを特定。SpaceX / Astranis / Varda 級の需要に対し、日本の素材・部品・ロケット技術を統合した宇宙コングロマリットを構想。</p>
+        <div class="foot"><span class="badge draft">DRAFT</span><span class="label">Market Map</span></div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="eyebrow">IDEA 03 · 260704</div>
+        <h3>Kaname</h3>
+        <div class="sub">カナメ / Cold Chain in Nigeria</div>
+        <p class="body">アフリカの生鮮食品ロスをなくす。まず「魚」の Cold chain から。漁師直買取 × 徹底温度管理で高級レストラン・市場へ卸し、その後 Meat / Vegetables / Medical へ拡張。</p>
+        <div class="foot"><span class="badge draft">DRAFT</span><span class="label">Pitch Material</span></div>
+      </a>
+
+      <a class="card soon" href="#">
+        <div class="eyebrow">IDEA 04 · COMING SOON</div>
+        <h3>Japan EMS for non-China world</h3>
+        <div class="sub">中国デカップリング時代の日本発 EMS / ODM</div>
+        <p class="body">Foxconn / Quanta が中国・台湾依存である現状を逆手に、日本国内 + Friend-shoring の生産網で「非中国EMS」の地位を狙う。</p>
+        <div class="foot"><span class="badge soon">COMING SOON</span></div>
+      </a>
+
+    </div>
+  </main>
   <script src="/site.js"></script>
 </body>
 </html>
