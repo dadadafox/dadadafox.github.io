@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seeds — Super Awareness</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="sidebar"></div>
+  <main class="main">
+    <div class="container">
+      <div class="pagehead"><h1>Seeds</h1></div>
+
+      <!-- カテゴリ（ラベル）。新しいラベルを足したいときは、
+           下の data-f を新しい名前にした <span class="chip"> を1つ追加します -->
+      <div class="filters">
+        <span class="chip on" data-f="all">all</span>
+        <span class="chip" data-f="business">business</span>
+        <span class="chip" data-f="product">product</span>
+        <span class="chip" data-f="life">life</span>
+        <span class="chip" data-f="random">random</span>
+      </div>
+
+      <!-- メモ一覧。新しいメモを足すときは、この <li> ブロックを1つコピーして
+           data-cat を該当ラベルに、日付・タイトル・説明を書き換えます -->
+      <ul class="feed">
+        <li class="entry" data-cat="business">
+          <div class="meta">2026.07.11<span class="tag">business</span></div>
+          <h2><a href="#">（メモのタイトル）</a></h2>
+          <p class="desc">（一行の説明）</p>
+        </li>
+        <li class="entry" data-cat="product">
+          <div class="meta">2026.07.08<span class="tag">product</span></div>
+          <h2><a href="#">（メモのタイトル）</a></h2>
+          <p class="desc">（一行の説明）</p>
+        </li>
+        <li class="entry" data-cat="life">
+          <div class="meta">2026.07.04<span class="tag">life</span></div>
+          <h2><a href="#">（メモのタイトル）</a></h2>
+          <p class="desc">（一行の説明）</p>
+        </li>
+      </ul>
+      <div class="empty" id="empty" style="display:none;">このラベルのメモはまだありません。</div>
+
+    </div>
+  </main>
+  <script src="/site.js"></script>
+</body>
+</html>
