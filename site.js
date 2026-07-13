@@ -16,6 +16,8 @@ const NAV = [
   { key: "personal", label: "Personal", href: "/personal.html" },
   { key: "seeds",    label: "Seeds",    href: "/seeds.html" },
   { key: "person",   label: "Person",   href: "/person.html" },
+  { key: "quote",      label: "Quote",      href: "/quote.html" },
+  { key: "essentials", label: "Essentials", href: "/essentials.html" },
 ];
 
 function buildHead(){
