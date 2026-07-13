@@ -1,15 +1,15 @@
 /* =========================================================
    Super Awareness — サイト共通スクリプト
-   ・中央タイトル＋横並びメニューを全ページに差し込みます
+   ・中央タイトル＋サブタイトル＋横並びメニューを全ページに差し込みます
    ・seeds のカテゴリ絞り込みを動かします
 
-   メニューを増やしたいときは NAV に1行足す。
-   タイトルを変えたいときは TITLE を書き換える。
-   各ページの <body data-section="..."> で、今どのメニューを
-   ハイライトするかが決まります（記事ページもこれで所属を指定）。
+   タイトル: TITLE / サブタイトル: SUBTITLE を書き換え
+   メニュー: NAV に1行足す
+   各ページの <body data-section="..."> で、ハイライトするメニューが決まる
    ========================================================= */
 
 const TITLE = "Super Awareness";
+const SUBTITLE = "A north star for the future we're building.";
 
 const NAV = [
   { key: "intro",    label: "Intro",    href: "/" },
@@ -17,20 +17,6 @@ const NAV = [
   { key: "seeds",    label: "Seeds",    href: "/seeds.html" },
   { key: "person",   label: "Person",   href: "/person.html" },
 ];
-
-/* マストヘッドのサグラダ（案1：立面図）。案2/3にしたいときはここを差し替え */
-const SAGRADA = `
-<svg viewBox="0 0 200 300" fill="none" stroke="#141414" stroke-width="1.4" stroke-linejoin="round">
-  <path d="M30 285 L44 120 L58 285"/><line x1="44" y1="120" x2="44" y2="285"/>
-  <path d="M58 285 L80 70 L102 285"/><line x1="80" y1="70" x2="80" y2="285"/>
-  <path d="M96 285 L118 40 L140 285"/><line x1="118" y1="40" x2="118" y2="285"/>
-  <path d="M140 285 L162 90 L184 285"/><line x1="162" y1="90" x2="162" y2="285"/>
-  <line x1="20" y1="285" x2="190" y2="285"/>
-  <g fill="#141414" stroke="none">
-    <circle cx="44" cy="120" r="3"/><circle cx="80" cy="70" r="3.4"/>
-    <circle cx="118" cy="40" r="3.8"/><circle cx="162" cy="90" r="3.4"/>
-  </g>
-</svg>`;
 
 function buildHead(){
   const el = document.getElementById("top");
@@ -42,7 +28,7 @@ function buildHead(){
   el.innerHTML =
     `<div class="masthead">
        <div class="title"><a href="/">${TITLE}</a></div>
-       <div class="sag">${SAGRADA}</div>
+       <div class="subtitle">${SUBTITLE}</div>
      </div>
      <nav class="topnav">${links}</nav>`;
 }

@@ -1,9 +1,15 @@
 /* =========================================================
-   Super Awareness — stylesheet（白黒 / 中央タイトル＋横メニュー）
+   Super Awareness — stylesheet
+   （situational-awareness 準拠：白地・黒文字・グレーのサブタイトル）
    色を変えたいときは :root の値だけ書き換えればOK
    ========================================================= */
 :root{
-  --bg:#fbfbfa; --ink:#141414; --dim:#8a8a86; --faint:#b3b3ae; --line:#e5e5e1; --hair:#111;
+  --bg:#ffffff;        /* 背景（白） */
+  --ink:#1a1a1a;       /* 本文・見出し（ほぼ黒） */
+  --dim:#8c8c8c;       /* サブタイトル・補助（グレー） */
+  --faint:#b3b3b3;
+  --line:#e6e6e6;      /* 区切り線 */
+  --hair:#111111;
   --serif:Georgia,"Times New Roman","YuMincho","Hiragino Mincho ProN",serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans",Meiryo,sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
@@ -17,26 +23,25 @@ a{color:inherit;text-decoration:none;}
 .wrap{max-width:760px;margin:0 auto;padding:72px 28px 120px;}
 
 /* ---- 中央タイトル（マストヘッド） ---- */
-.masthead{text-align:center;margin-bottom:24px;}
-.masthead .title{font-size:40px;font-weight:700;letter-spacing:.06em;line-height:1.1;text-transform:uppercase;}
-.masthead .title a{color:var(--ink);}
-.masthead .sag{margin:18px auto 0;width:66px;}
-.masthead .sag svg{display:block;width:100%;height:auto;}
+.masthead{text-align:center;margin-bottom:30px;}
+.masthead .title{font-size:44px;font-weight:700;letter-spacing:.04em;line-height:1.1;text-transform:uppercase;color:var(--ink);}
+.masthead .title a{color:inherit;}
+.masthead .subtitle{font-size:24px;color:var(--dim);margin-top:10px;line-height:1.3;}
 
 /* ---- 横並びメニュー（目次） ---- */
-.topnav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;
-  max-width:640px;margin:0 auto;padding-bottom:36px;border-bottom:1px solid var(--line);}
+.topnav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;
+  max-width:640px;margin:34px auto 0;}
 .topnav a{font-size:17px;color:var(--ink);}
 .topnav a:hover{text-decoration:underline;}
 .topnav a.current{color:var(--dim);}
 
 /* ---- ページ本文（中央カラム・左そろえ） ---- */
-.content{padding-top:52px;}
+.content{padding-top:64px;}
 .content h1,.pagehead h1{font-size:40px;font-weight:700;line-height:1.15;margin:0 0 16px;letter-spacing:-.01em;}
 .byline{color:var(--dim);font-size:17px;margin:-6px 0 40px;}
 .content p{margin:0 0 24px;}
 .content h2{font-size:25px;font-weight:700;margin:44px 0 14px;}
-.content blockquote{margin:30px 0;padding-left:22px;border-left:2px solid var(--ink);color:#5a5a56;font-style:italic;}
+.content blockquote{margin:30px 0;padding-left:22px;border-left:2px solid var(--ink);color:#5a5a5a;font-style:italic;}
 .content ul{padding-left:1.3em;} .content li{margin-bottom:6px;}
 .content a.link{border-bottom:1px solid var(--hair);}
 .back{margin-top:56px;font-size:16px;}
@@ -51,7 +56,7 @@ a{color:inherit;text-decoration:none;}
 .entry h2{font-size:24px;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
 .entry h2 a{border-bottom:1px solid transparent;}
 .entry h2 a:hover{border-bottom-color:var(--ink);}
-.entry .desc{margin:0;color:#5a5a56;font-size:16px;line-height:1.6;}
+.entry .desc{margin:0;color:#5a5a5a;font-size:16px;line-height:1.6;}
 .empty{color:var(--dim);font-family:var(--sans);font-size:15px;padding:26px 0;}
 
 /* ---- Seeds: カテゴリ絞り込み ---- */
@@ -59,15 +64,15 @@ a{color:inherit;text-decoration:none;}
 .chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);
   padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;transition:all .12s;}
 .chip:hover{border-color:#111;color:#111;}
-.chip.on{background:#141414;color:#fff;border-color:#141414;}
+.chip.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
 
 a:focus-visible{outline:2px solid var(--hair);outline-offset:2px;border-radius:3px;}
 
 @media(max-width:640px){
   body{font-size:18px;}
   .wrap{padding:44px 20px 80px;}
-  .masthead .title{font-size:29px;}
-  .content h1,.pagehead h1,.content{ }
+  .masthead .title{font-size:30px;}
+  .masthead .subtitle{font-size:19px;}
   .content h1{font-size:29px;}
   .topnav{gap:8px 18px;} .topnav a{font-size:15px;}
 }
