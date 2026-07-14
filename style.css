@@ -211,3 +211,20 @@ a:focus-visible{outline:2px solid var(--hair);outline-offset:2px;border-radius:3
   .ess2 .en-title{font-size:25px;}
   .ess2 .core .ja{font-size:19px;}
 }
+
+/* =========================================================
+   Intro — マニフェスト＋背景のサグラダ
+   ========================================================= */
+.intro-hero{padding:44px 24px 30px;text-align:center;overflow:hidden;}
+.intro-sagrada{width:min(640px,92%);margin:12px auto 0;opacity:.6;pointer-events:none;}
+.intro-sagrada svg{width:100%;height:auto;display:block;}
+.manifesto{max-width:600px;margin:0 auto;text-align:center;}
+.manifesto .lead-line{font-size:29px;line-height:1.4;font-weight:700;margin:0 0 22px;color:#141414;letter-spacing:-.01em;}
+.manifesto p{font-size:20px;line-height:1.62;margin:0 0 16px;color:#2b2b2b;}
+.manifesto p.last{margin-top:8px;color:#141414;}
+@media(max-width:640px){
+  .intro-hero{min-height:auto;padding:10px 18px 70px;}
+  .manifesto .lead-line{font-size:23px;}
+  .manifesto p{font-size:17px;}
+  .intro-sagrada{width:150%;}
+}
