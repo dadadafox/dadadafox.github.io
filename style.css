@@ -170,3 +170,44 @@ a:focus-visible{outline:2px solid var(--hair);outline-offset:2px;border-radius:3
   background-size:cover;background-position:center;filter:grayscale(1) contrast(1.03);}
 .entry.person .txt h2{margin:0 0 4px;}
 .entry.person .txt .desc{margin:0;}
+
+/* =========================================================
+   Quote（名言） / Essentials（重要事項）
+   ========================================================= */
+.quotes{list-style:none;margin:0;padding:0;}
+.quotes li{padding:32px 0;border-bottom:1px solid var(--line);}
+.quotes li:first-child{border-top:1px solid var(--line);}
+.quotes .q{font-size:25px;line-height:1.5;font-style:italic;color:#1f1f1f;margin:0 0 14px;}
+.quotes .who{font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:var(--dim);}
+
+.ess{list-style:none;margin:0;padding:0;}
+.ess li{padding:26px 0;border-bottom:1px solid var(--line);}
+.ess li:first-child{border-top:1px solid var(--line);}
+.ess .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--dim);}
+.ess h2{font-size:22px;font-weight:700;margin:6px 0 8px;letter-spacing:-.01em;}
+.ess p{margin:0;color:#333;line-height:1.7;}
+
+/* =========================================================
+   Essentials v2 — 日英併記（日本語 主 / 英語 副）
+   ========================================================= */
+.ess-lead{padding:4px 0 40px;border-bottom:1px solid var(--line);margin-bottom:4px;}
+.ess-lead .ja{font-size:23px;line-height:1.6;margin:0 0 8px;color:#1a1a1a;}
+.ess-lead .en{font-style:italic;color:var(--dim);font-size:16px;margin:0;}
+
+.ess2{list-style:none;margin:0;padding:0;}
+.ess2 > li{padding:54px 0;border-bottom:1px solid var(--line);}
+.ess2 .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--dim);}
+.ess2 .en-title{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin:10px 0 4px;}
+.ess2 .ja-title{font-size:17px;color:var(--dim);margin:0 0 26px;}
+
+.ess2 .core{border-left:2px solid var(--ink);padding-left:20px;margin:0 0 26px;}
+.ess2 .core .ja{font-size:22px;font-weight:700;line-height:1.55;margin:0 0 8px;color:#141414;}
+.ess2 .core .en{font-style:italic;color:var(--dim);font-size:15.5px;line-height:1.5;margin:0;}
+
+.ess2 .body .ja{margin:0 0 16px;line-height:1.95;color:#262626;}
+.ess2 .body .en{color:#8f8f8f;font-size:15px;line-height:1.8;margin:0;}
+
+@media(max-width:640px){
+  .ess2 .en-title{font-size:25px;}
+  .ess2 .core .ja{font-size:19px;}
+}
