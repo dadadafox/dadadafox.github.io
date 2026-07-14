@@ -215,10 +215,10 @@ a:focus-visible{outline:2px solid var(--hair);outline-offset:2px;border-radius:3
 /* =========================================================
    Intro — マニフェスト＋背景のサグラダ
    ========================================================= */
-.intro-hero{padding:44px 24px 30px;text-align:center;overflow:hidden;}
-.intro-sagrada{width:min(640px,92%);margin:12px auto 0;opacity:.6;pointer-events:none;}
+.intro-hero{position:relative;overflow:hidden;padding:48px 24px 70px;min-height:60vh;display:flex;align-items:center;justify-content:center;}
+.intro-sagrada{position:absolute;left:50%;top:50%;transform:translate(-50%,-46%);width:min(720px,116%);opacity:.4;pointer-events:none;z-index:0;}
 .intro-sagrada svg{width:100%;height:auto;display:block;}
-.manifesto{max-width:600px;margin:0 auto;text-align:center;}
+.manifesto{position:relative;z-index:1;max-width:600px;margin:0 auto;text-align:center;padding:20px 12px;}
 .manifesto .lead-line{font-size:29px;line-height:1.4;font-weight:700;margin:0 0 22px;color:#141414;letter-spacing:-.01em;}
 .manifesto p{font-size:20px;line-height:1.62;margin:0 0 16px;color:#2b2b2b;}
 .manifesto p.last{margin-top:8px;color:#141414;}
@@ -226,5 +226,7 @@ a:focus-visible{outline:2px solid var(--hair);outline-offset:2px;border-radius:3
   .intro-hero{min-height:auto;padding:10px 18px 70px;}
   .manifesto .lead-line{font-size:23px;}
   .manifesto p{font-size:17px;}
-  .intro-sagrada{width:150%;}
+  .intro-sagrada{width:100%;}
 }
+
+.manifesto .lead-line, .manifesto p{display:inline-block;background:radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,255,255,.75) 65%, rgba(255,255,255,0));padding:2px 14px;border-radius:20px;}
